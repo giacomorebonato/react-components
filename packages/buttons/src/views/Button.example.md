@@ -3,6 +3,9 @@ wrapper that applies focused styling _ONLY_ on keyboard focus. This can always
 be overridden by providing the `focus` prop.
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+const { materialTheme } = require('@zendeskgarden/react-theming/src');
+
 <Grid>
   <Row>
     <Col md>
@@ -23,8 +26,13 @@ be overridden by providing the `focus` prop.
         Danger Pill Example
       </Button>
     </Col>
+    <Col md>
+      <ThemeProvider theme={materialTheme}>
+        <Button>Material</Button>
+      </ThemeProvider>
+    </Col>
   </Row>
-</Grid>
+</Grid>;
 ```
 
 ### Types

@@ -8,15 +8,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { default as defaultTheme } from '../theme';
 
 const ThemeProvider = props => {
-  const theme = {
-    rtl: props.rtl,
-    styles: props.theme,
-    document: props.document
-  };
+  if (props.theme.colors) {
+    props.theme.colors = { ...defaultTheme.colors, ...props.theme.colors };
+  }
+
+  const theme = { ...defaultTheme, ...props.theme, rtl: props.rtl, document: props.document };
 
   return <StyledThemeProvider theme={theme}>{props.children}</StyledThemeProvider>;
+};
+
+ThemeProvider.defaultProps = {
+  theme: defaultTheme
 };
 
 ThemeProvider.propTypes = {

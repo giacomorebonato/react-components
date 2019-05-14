@@ -19,11 +19,13 @@
     "start": "../../utils/scripts/start.sh"
   },
   "dependencies": {
+    "@material-ui/core": "3.9.3",
     "@zendeskgarden/css-variables": "^6.1.1",
     "@zendeskgarden/react-selection": "^4.6.2",
     "@zendeskgarden/react-utilities": "^0.2.5",
     "classnames": "^2.2.5",
-    "dom-helpers": "^3.3.1"
+    "dom-helpers": "^3.3.1",
+    "polished": "^3.3.0"
   },
   "peerDependencies": {
     "@zendeskgarden/react-theming": "^4.0.0",
