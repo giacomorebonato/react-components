@@ -111,11 +111,12 @@ lineHeights.xl = `${lineHeights[3]}px`;
 lineHeights.xxl = `${lineHeights[4]}px`;
 lineHeights.xxxl = `${lineHeights[5]}px`;
 
-const mode = {
+const modes = {
   light: {
     background: colors.white,
     foreground: colors.grey[800],
-    hue: 'blue'
+    hue: 'blue',
+    shade: 600
   }
 };
 
@@ -170,7 +171,8 @@ export default {
   fontSizes,
   fontWeights,
   lineHeights,
-  mode,
+  mode: 'light',
+  modes,
   radii,
   shadowWidths,
   shadows,

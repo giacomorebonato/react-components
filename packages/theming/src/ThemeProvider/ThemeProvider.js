@@ -15,6 +15,7 @@ const ThemeProvider = props => {
     props.theme.colors = { ...defaultTheme.colors, ...props.theme.colors };
   }
 
+  // TODO [jtz] need a smart theming merge – retain the default; add and replace with custom.
   const theme = { ...defaultTheme, ...props.theme, rtl: props.rtl, document: props.document };
 
   return <StyledThemeProvider theme={theme}>{props.children}</StyledThemeProvider>;
