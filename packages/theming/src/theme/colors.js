@@ -55,6 +55,50 @@ import {
   zdColorYellow600,
   zdColorYellow700,
   zdColorYellow800,
+  zdColorSecondaryFuschia400,
+  zdColorSecondaryFuschia600,
+  zdColorSecondaryFuschiaM400,
+  zdColorSecondaryFuschiaM600,
+  zdColorSecondaryPink400,
+  zdColorSecondaryPink600,
+  zdColorSecondaryPinkM400,
+  zdColorSecondaryPinkM600,
+  zdColorSecondaryCrimson400,
+  zdColorSecondaryCrimson600,
+  zdColorSecondaryCrimsonM400,
+  zdColorSecondaryCrimsonM600,
+  zdColorSecondaryOrange400,
+  zdColorSecondaryOrange600,
+  zdColorSecondaryOrangeM400,
+  zdColorSecondaryOrangeM600,
+  zdColorSecondaryLemon400,
+  zdColorSecondaryLemon600,
+  zdColorSecondaryLemonM400,
+  zdColorSecondaryLemonM600,
+  zdColorSecondaryLime400,
+  zdColorSecondaryLime600,
+  zdColorSecondaryLimeM400,
+  zdColorSecondaryLimeM600,
+  zdColorSecondaryMint400,
+  zdColorSecondaryMint600,
+  zdColorSecondaryMintM400,
+  zdColorSecondaryMintM600,
+  zdColorSecondaryTeal400,
+  zdColorSecondaryTeal600,
+  zdColorSecondaryTealM400,
+  zdColorSecondaryTealM600,
+  zdColorSecondaryAzure400,
+  zdColorSecondaryAzure600,
+  zdColorSecondaryAzureM400,
+  zdColorSecondaryAzureM600,
+  zdColorSecondaryRoyal400,
+  zdColorSecondaryRoyal600,
+  zdColorSecondaryRoyalM400,
+  zdColorSecondaryRoyalM600,
+  zdColorSecondaryPurple400,
+  zdColorSecondaryPurple600,
+  zdColorSecondaryPurpleM400,
+  zdColorSecondaryPurpleM600,
   zdColorWhite
 } from '@zendeskgarden/css-variables';
 
@@ -119,6 +163,72 @@ export default {
     600: zdColorYellow600,
     700: zdColorYellow700,
     800: zdColorYellow800
+  },
+  fuschia: {
+    400: zdColorSecondaryFuschia400,
+    600: zdColorSecondaryFuschia600,
+    M400: zdColorSecondaryFuschiaM400,
+    M600: zdColorSecondaryFuschiaM600
+  },
+  pink: {
+    400: zdColorSecondaryPink400,
+    600: zdColorSecondaryPink600,
+    M400: zdColorSecondaryPinkM400,
+    M600: zdColorSecondaryPinkM600
+  },
+  crimson: {
+    400: zdColorSecondaryCrimson400,
+    600: zdColorSecondaryCrimson600,
+    M400: zdColorSecondaryCrimsonM400,
+    M600: zdColorSecondaryCrimsonM600
+  },
+  orange: {
+    400: zdColorSecondaryOrange400,
+    600: zdColorSecondaryOrange600,
+    M400: zdColorSecondaryOrangeM400,
+    M600: zdColorSecondaryOrangeM600
+  },
+  lemon: {
+    400: zdColorSecondaryLemon400,
+    600: zdColorSecondaryLemon600,
+    M400: zdColorSecondaryLemonM400,
+    M600: zdColorSecondaryLemonM600
+  },
+  lime: {
+    400: zdColorSecondaryLime400,
+    600: zdColorSecondaryLime600,
+    M400: zdColorSecondaryLimeM400,
+    M600: zdColorSecondaryLimeM600
+  },
+  mint: {
+    400: zdColorSecondaryMint400,
+    600: zdColorSecondaryMint600,
+    M400: zdColorSecondaryMintM400,
+    M600: zdColorSecondaryMintM600
+  },
+  teal: {
+    400: zdColorSecondaryTeal400,
+    600: zdColorSecondaryTeal600,
+    M400: zdColorSecondaryTealM400,
+    M600: zdColorSecondaryTealM600
+  },
+  azure: {
+    400: zdColorSecondaryAzure400,
+    600: zdColorSecondaryAzure600,
+    M400: zdColorSecondaryAzureM400,
+    M600: zdColorSecondaryAzureM600
+  },
+  royal: {
+    400: zdColorSecondaryRoyal400,
+    600: zdColorSecondaryRoyal600,
+    M400: zdColorSecondaryRoyalM400,
+    M600: zdColorSecondaryRoyalM600
+  },
+  purple: {
+    400: zdColorSecondaryPurple400,
+    600: zdColorSecondaryPurple600,
+    M400: zdColorSecondaryPurpleM400,
+    M600: zdColorSecondaryPurpleM600
   },
   white: zdColorWhite
 };
