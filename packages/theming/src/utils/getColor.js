@@ -15,7 +15,7 @@ export default function getColor({ hue, shade, theme } = {}) {
       ? theme.modes[theme.mode]
       : defaultTheme.modes[defaultTheme.mode];
   const colors = theme && theme.colors ? theme.colors : defaultTheme.colors;
-  let _hue = hue || mode.hue || defaultTheme.modes[defaultTheme.mode].hue;
+  let _hue = hue || mode.primaryHue || defaultTheme.modes[defaultTheme.mode].primaryHue;
 
   if (Object.prototype.hasOwnProperty.call(colors, _hue)) {
     // Convert string to a hue object.
@@ -23,7 +23,7 @@ export default function getColor({ hue, shade, theme } = {}) {
   }
 
   if (_hue && typeof _hue === 'object') {
-    let _shade = shade || mode.shade || defaultTheme.modes[defaultTheme.mode].shade;
+    let _shade = shade || mode.primaryShade || defaultTheme.modes[defaultTheme.mode].primaryShade;
 
     _shade = Object.keys(_hue).reduce((previous, current) => {
       // Find the closest available shade within the given hue.

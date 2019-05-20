@@ -77,8 +77,8 @@ const StyledButton = styled.button.attrs(() => ({
 
 StyledButton.defaultProps = {
   theme: defaultTheme,
-  hue: defaultTheme.modes[defaultTheme.mode].hue,
-  shade: defaultTheme.modes[defaultTheme.mode].shade
+  hue: defaultTheme.modes[defaultTheme.mode].primaryHue,
+  shade: defaultTheme.modes[defaultTheme.mode].primaryShade
 };
 
 StyledButton.propTypes = {

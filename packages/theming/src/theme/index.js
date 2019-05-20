@@ -113,10 +113,10 @@ lineHeights.xxxl = `${lineHeights[5]}px`;
 
 const modes = {
   light: {
-    background: colors.white,
-    foreground: colors.grey[800],
-    hue: 'blue',
-    shade: 600
+    backgroundColor: colors.white,
+    foregroundColor: colors.grey[800],
+    primaryHue: 'blue',
+    primaryShade: 600
   }
 };
 
