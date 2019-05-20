@@ -19,6 +19,7 @@
     "start": "../../utils/scripts/start.sh"
   },
   "dependencies": {
+    "@material-ui/core": "3.9.3",
     "@zendeskgarden/css-variables": "^6.3.3",
     "polished": "3.3.0"
   },
