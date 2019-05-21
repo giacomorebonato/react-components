@@ -5,114 +5,84 @@
  * found at http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-import {
-  zdFontFamilySystem,
-  zdFontFamilyMonospace,
-  zdFontSizeSm,
-  zdFontSizeMd,
-  zdFontSizeLg,
-  zdFontSizeXl,
-  zdFontSizeXxl,
-  zdFontSizeXxxl,
-  zdFontWeightThin,
-  zdFontWeightExtralight,
-  zdFontWeightLight,
-  zdFontWeightRegular,
-  zdFontWeightSemibold,
-  zdFontWeightBold,
-  zdFontWeightExtrabold,
-  zdFontWeightBlack,
-  zdLineHeightSm,
-  zdLineHeightMd,
-  zdLineHeightLg,
-  zdLineHeightXl,
-  zdLineHeightXxl,
-  zdLineHeightXxxl,
-  zdSpacingXxs,
-  zdSpacingXs,
-  zdSpacingSm,
-  zdSpacing,
-  zdSpacingLg,
-  zdSpacingXl,
-  zdSpacingXxl
-} from '@zendeskgarden/css-variables';
-import { stripUnit } from 'polished';
 import colors from './colors';
 
 const base = 4;
 
 const borderStyles = {
+  none: 'none',
   solid: 'solid'
 };
 
-const borderWidths = [0, 1, 3];
+const borderWidths = {
+  none: 0,
+  sm: '1px',
+  md: '3px'
+};
 
-borderWidths.sm = `${borderWidths[1]}px`;
-borderWidths.md = `${borderWidths[2]}px`;
+const borders = {
+  none: `${borderWidths.none} ${borderStyles.none}`,
+  sm: `${borderWidths.sm} ${borderStyles.solid}`,
+  md: `${borderWidths.md} ${borderStyles.solid}`
+};
 
-const borders = [
-  `${borderWidths[0]} ${borderStyles.solid}`,
-  `${borderWidths.sm} ${borderStyles.solid}`,
-  `${borderWidths.md} ${borderStyles.solid}`
-];
+const fonts = {
+  mono: [
+    'SFMono-Regular' /* macOS */,
+    'Consolas' /* Windows */,
+    '"Liberation Mono"' /* Ubuntu */,
+    'Menlo',
+    'Courier',
+    'monospace'
+  ].join(','),
+  system: [
+    'system-ui' /* drafts.csswg.org/css-fonts-4/#system-ui */,
+    '-apple-system' /* macOS Safari & FF (San Francisco) */,
+    'BlinkMacSystemFont' /* macOS Chrome (San Francisco) */,
+    '"Segoe UI"' /* Windows */,
+    'Roboto' /* Android & ChromeOS */,
+    'Oxygen-Sans' /* KDE */,
+    'Ubuntu' /* Ubuntu */,
+    'Cantarell' /* GNOME */,
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif'
+  ].join(',')
+};
 
-borders.sm = borders[1];
-borders.md = borders[2];
+const fontSizes = {
+  none: 0,
+  sm: '12px',
+  md: '14px',
+  lg: '18px',
+  xl: '22px',
+  xxl: '26px',
+  xxxl: '36px'
+};
 
-const fontSizes = [
-  stripUnit(zdFontSizeSm),
-  stripUnit(zdFontSizeMd),
-  stripUnit(zdFontSizeLg),
-  stripUnit(zdFontSizeXl),
-  stripUnit(zdFontSizeXxl),
-  stripUnit(zdFontSizeXxxl)
-];
+const fontWeights = {
+  thin: 100,
+  extralight: 200,
+  light: 300,
+  regular: 400,
+  semibold: 500,
+  bold: 600,
+  extrabold: 700,
+  black: 800
+};
 
-fontSizes.sm = `${fontSizes[0]}px`;
-fontSizes.md = `${fontSizes[1]}px`;
-fontSizes.lg = `${fontSizes[2]}px`;
-fontSizes.xl = `${fontSizes[3]}px`;
-fontSizes.xxl = `${fontSizes[4]}px`;
-fontSizes.xxxl = `${fontSizes[5]}px`;
-
-const fontWeights = [
-  parseInt(zdFontWeightThin, 10),
-  parseInt(zdFontWeightExtralight, 10),
-  parseInt(zdFontWeightLight, 10),
-  parseInt(zdFontWeightRegular, 10),
-  parseInt(zdFontWeightSemibold, 10),
-  parseInt(zdFontWeightBold, 10),
-  parseInt(zdFontWeightExtrabold, 10),
-  parseInt(zdFontWeightBlack, 10)
-];
-
-fontWeights.thin = fontWeights[0];
-fontWeights.extralight = fontWeights[1];
-fontWeights.light = fontWeights[2];
-fontWeights.regular = fontWeights[3];
-fontWeights.semibold = fontWeights[4];
-fontWeights.bold = fontWeights[5];
-fontWeights.extrabold = fontWeights[6];
-fontWeights.black = fontWeights[7];
-
-const lineHeights = [
-  stripUnit(zdLineHeightSm),
-  stripUnit(zdLineHeightMd),
-  stripUnit(zdLineHeightLg),
-  stripUnit(zdLineHeightXl),
-  stripUnit(zdLineHeightXxl),
-  stripUnit(zdLineHeightXxxl)
-];
-
-lineHeights.sm = `${lineHeights[0]}px`;
-lineHeights.md = `${lineHeights[1]}px`;
-lineHeights.lg = `${lineHeights[2]}px`;
-lineHeights.xl = `${lineHeights[3]}px`;
-lineHeights.xxl = `${lineHeights[4]}px`;
-lineHeights.xxxl = `${lineHeights[5]}px`;
+const lineHeights = {
+  none: 0,
+  sm: `${base * 4}px`,
+  md: `${base * 5}px`,
+  lg: `${base * 6}px`,
+  xl: `${base * 7}px`,
+  xxl: `${base * 8}px`,
+  xxxl: `${base * 11}px`
+};
 
 const modes = {
-  light: {
+  default: {
     backgroundColor: colors.white,
     foregroundColor: colors.grey[800],
     primaryHue: 'blue',
@@ -120,58 +90,44 @@ const modes = {
   }
 };
 
-const radii = [0, base / 2, base];
+const radii = {
+  none: 0,
+  sm: `${base / 2}px`,
+  md: `${base}px`
+};
 
-radii.sm = `${radii[1]}px`;
-radii.md = `${radii[2]}px`;
+const shadowWidths = {
+  sm: '2px',
+  md: '3px'
+};
 
-const shadowWidths = [0, 2, 3];
+const shadows = {
+  sm: color => `0 0 0 ${shadowWidths.sm} ${color}`,
+  md: color => `0 0 0 ${shadowWidths.md} ${color}`
+};
 
-shadowWidths.sm = `${shadowWidths[1]}px`;
-shadowWidths.md = `${shadowWidths[2]}px`;
-
-const shadows = [
-  color => `0 0 0 ${shadowWidths[0]} ${color}`,
-  color => `0 0 0 ${shadowWidths.sm} ${color}`,
-  color => `0 0 0 ${shadowWidths.md} ${color}`
-];
-
-shadows.sm = shadows[1];
-shadows.md = shadows[2];
-
-const space = [
-  0,
-  stripUnit(zdSpacingXxs),
-  stripUnit(zdSpacingXs),
-  stripUnit(zdSpacingSm),
-  stripUnit(zdSpacing),
-  stripUnit(zdSpacingLg),
-  stripUnit(zdSpacingXl),
-  stripUnit(zdSpacingXxl)
-];
-
-space.base = base;
-space.xxs = `${space[1]}px`;
-space.xs = `${space[2]}px`;
-space.sm = `${space[3]}px`;
-space.md = `${space[4]}px`;
-space.lg = `${space[5]}px`;
-space.xl = `${space[6]}px`;
-space.xxl = `${space[7]}px`;
+const space = {
+  none: 0,
+  xxs: `${base}px`,
+  xs: `${base * 2}px`,
+  sm: `${base * 3}px`,
+  md: `${base * 5}px`,
+  lg: `${base * 8}px`,
+  xl: `${base * 10}px`,
+  xxl: `${base * 12}px`
+};
 
 export default {
+  base,
   borders,
   borderStyles,
   borderWidths,
   colors,
-  fonts: {
-    sans: zdFontFamilySystem,
-    mono: zdFontFamilyMonospace
-  },
+  fonts,
   fontSizes,
   fontWeights,
   lineHeights,
-  mode: 'light',
+  mode: 'default',
   modes,
   radii,
   shadowWidths,

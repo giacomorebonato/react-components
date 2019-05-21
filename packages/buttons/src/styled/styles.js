@@ -67,20 +67,20 @@ const size = props => {
   let fontSize;
   let lineHeight;
   let minWidth;
-  const padding = props.theme.space.base * 7;
+  const padding = props.theme.base * 7;
 
   if (props.size === 'small') {
     fontSize = props.theme.fontSizes.sm;
-    lineHeight = props.theme.space.base * 8;
-    minWidth = props.theme.space.base * 25;
+    lineHeight = props.theme.base * 8;
+    minWidth = props.theme.base * 25;
   } else if (props.size === 'large') {
     fontSize = props.theme.fontSizes.md;
-    lineHeight = props.theme.space.base * 12;
-    minWidth = props.theme.space.base * 35;
+    lineHeight = props.theme.base * 12;
+    minWidth = props.theme.base * 35;
   } else {
     fontSize = props.theme.fontSizes.md;
-    lineHeight = props.theme.space.base * 10;
-    minWidth = props.theme.space.base * 30;
+    lineHeight = props.theme.base * 10;
+    minWidth = props.theme.base * 30;
   }
 
   return css`

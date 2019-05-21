@@ -8,15 +8,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import deepmerge from 'deepmerge';
 import { default as defaultTheme } from '../theme';
 
 const ThemeProvider = props => {
-  if (props.theme.colors) {
-    props.theme.colors = { ...defaultTheme.colors, ...props.theme.colors };
-  }
+  const theme = deepmerge(defaultTheme, props.theme);
 
-  // TODO [jtz] need a smart theming merge – retain the default; add and replace with custom.
-  const theme = { ...defaultTheme, ...props.theme, rtl: props.rtl, document: props.document };
+  theme.rtl = props.rtl;
+  theme.document = props.document;
 
   return <StyledThemeProvider theme={theme}>{props.children}</StyledThemeProvider>;
 };
