@@ -63,6 +63,35 @@ const color = props => {
   return retVal;
 };
 
+const group = props => {
+  const rtl = props.theme.rtl;
+
+  return css`
+    position: relative;
+    margin-${rtl ? 'right' : 'left'}: ${math(`${props.theme.borderWidths.sm} * -1`)};
+
+    &:not(:first-of-type):not(:last-of-type) {
+      border-radius: 0;
+    }
+
+    &:first-of-type {
+      margin-left: 0;
+      border-top-${rtl ? 'left' : 'right'}-radius: 0;
+      border-bottom-${rtl ? 'left' : 'right'}-radius: 0;
+    }
+
+    &:last-of-type {
+      border-top-${rtl ? 'right' : 'left'}-radius: 0;
+      border-bottom-${rtl ? 'right' : 'left'}-radius: 0;
+    }
+
+    &:hover,
+    &:active {
+      z-index: 1;
+    }
+  `;
+};
+
 const size = props => {
   let fontSize;
   let lineHeight;
@@ -92,4 +121,5 @@ const size = props => {
 };
 
 export { color };
+export { group };
 export { size };

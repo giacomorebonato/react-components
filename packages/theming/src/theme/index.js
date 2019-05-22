@@ -10,18 +10,15 @@ import colors from './colors';
 const base = 4;
 
 const borderStyles = {
-  none: 'none',
   solid: 'solid'
 };
 
 const borderWidths = {
-  none: 0,
   sm: '1px',
   md: '3px'
 };
 
 const borders = {
-  none: `${borderWidths.none} ${borderStyles.none}`,
   sm: `${borderWidths.sm} ${borderStyles.solid}`,
   md: `${borderWidths.md} ${borderStyles.solid}`
 };
@@ -51,7 +48,6 @@ const fonts = {
 };
 
 const fontSizes = {
-  none: 0,
   sm: '12px',
   md: '14px',
   lg: '18px',
@@ -72,7 +68,6 @@ const fontWeights = {
 };
 
 const lineHeights = {
-  none: 0,
   sm: `${base * 4}px`,
   md: `${base * 5}px`,
   lg: `${base * 6}px`,
@@ -91,7 +86,6 @@ const modes = {
 };
 
 const radii = {
-  none: 0,
   sm: `${base / 2}px`,
   md: `${base}px`
 };
@@ -107,7 +101,6 @@ const shadows = {
 };
 
 const space = {
-  none: 0,
   xxs: `${base}px`,
   xs: `${base * 2}px`,
   sm: `${base * 3}px`,

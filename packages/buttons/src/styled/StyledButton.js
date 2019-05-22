@@ -8,6 +8,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { defaultTheme, retrieveTheme } from '@zendeskgarden/react-theming';
+import ButtonGroupView from '../views/button-group/ButtonGroupView';
 import * as styles from './styles';
 
 const COMPONENT_ID = 'buttons.button';
@@ -70,6 +71,10 @@ const StyledButton = styled.button.attrs(() => ({
     background-color: ${props => props.theme.colors.grey[200]};
     cursor: default;
     color: ${props => props.theme.colors.grey[400]};
+  }
+
+  ${ButtonGroupView} & {
+    ${props => styles.group(props)};
   }
 
   ${props => retrieveTheme(COMPONENT_ID, props)};

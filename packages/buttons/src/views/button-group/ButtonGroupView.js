@@ -6,28 +6,32 @@
  */
 
 import styled from 'styled-components';
-import classNames from 'classnames';
-import ButtonStyles from '@zendeskgarden/css-buttons';
-import { retrieveTheme, isRtl } from '@zendeskgarden/react-theming';
+import { defaultTheme, retrieveTheme } from '@zendeskgarden/react-theming';
 
 const COMPONENT_ID = 'buttons.button_group_view';
 
 /**
  * Accepts all `<div>` props
  */
-const ButtonGroupView = styled.div.attrs(props => ({
+const ButtonGroupView = styled.div.attrs(() => ({
   'data-garden-id': COMPONENT_ID,
-  'data-garden-version': PACKAGE_VERSION,
-  className: classNames(ButtonStyles['l-btn-group'], {
-    [ButtonStyles['is-rtl']]: isRtl(props)
-  })
+  'data-garden-version': PACKAGE_VERSION
 }))`
+  position: relative;
+  z-index: 0;
+  direction: ${props => (props.theme.rtl ? 'rtl' : null)};
+  white-space: nowrap;
+
   :focus {
     outline: none;
   }
 
   ${props => retrieveTheme(COMPONENT_ID, props)};
 `;
+
+ButtonGroupView.defaultProps = {
+  theme: defaultTheme
+};
 
 /** @component */
 export default ButtonGroupView;
