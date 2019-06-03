@@ -33,7 +33,7 @@ const NextItem = React.forwardRef(({ value, disabled, ...props }, ref) => {
 });
 
 NextItem.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.any,
   disabled: PropTypes.bool,
   active: PropTypes.bool,
   focused: PropTypes.bool,

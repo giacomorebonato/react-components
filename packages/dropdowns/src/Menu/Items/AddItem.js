@@ -19,7 +19,7 @@ const AddItem = React.forwardRef((props, ref) => (
 ));
 
 AddItem.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.any,
   active: PropTypes.bool,
   focused: PropTypes.bool,
   hovered: PropTypes.bool,
