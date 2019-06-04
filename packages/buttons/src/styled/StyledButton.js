@@ -6,8 +6,7 @@
  */
 
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { defaultTheme, retrieveTheme } from '@zendeskgarden/react-theming';
+import { defaultTheme, retrieveTheme, getColor } from '@zendeskgarden/react-theming';
 import ButtonGroupView from '../views/button-group/ButtonGroupView';
 import * as styles from './styles';
 
@@ -68,9 +67,11 @@ const StyledButton = styled.button.attrs(() => ({
   &:disabled {
     border-color: transparent;
     box-shadow: none;
-    background-color: ${props => props.theme.colors.grey[200]};
+    background-color: ${props =>
+      getColor({ hue: props.theme.colors.disabledHue, shade: 200, theme: props.theme })};
     cursor: default;
-    color: ${props => props.theme.colors.grey[400]};
+    color: ${props =>
+      getColor({ hue: props.theme.colors.disabledHue, shade: 400, theme: props.theme })};
   }
 
   ${ButtonGroupView} & {
@@ -81,14 +82,7 @@ const StyledButton = styled.button.attrs(() => ({
 `;
 
 StyledButton.defaultProps = {
-  theme: defaultTheme,
-  hue: defaultTheme.modes[defaultTheme.mode].primaryHue,
-  shade: defaultTheme.modes[defaultTheme.mode].primaryShade
-};
-
-StyledButton.propTypes = {
-  hue: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  shade: PropTypes.number
+  theme: defaultTheme
 };
 
 export default StyledButton;

@@ -9,10 +9,10 @@ const product = {
   chat: '#f79a3e',
   connect: '#eb6651',
   explore: '#30aabc',
-  pink: '#eb4962',
+  guide: '#eb4962',
   message: '#37b8af',
   sell: '#d4ae5e',
-  green: '#78a300',
+  support: '#78a300',
   talk: '#efc93d'
 };
 

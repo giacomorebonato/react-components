@@ -19,7 +19,6 @@
     "start": "../../utils/scripts/start.sh"
   },
   "dependencies": {
-    "@material-ui/core": "3.9.3",
     "deepmerge": "3.2.0"
   },
   "peerDependencies": {

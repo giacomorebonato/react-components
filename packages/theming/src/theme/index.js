@@ -5,7 +5,7 @@
  * found at http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-import colors from './colors';
+import palette from '../palette';
 
 const base = 4;
 
@@ -21,6 +21,17 @@ const borderWidths = {
 const borders = {
   sm: `${borderWidths.sm} ${borderStyles.solid}`,
   md: `${borderWidths.md} ${borderStyles.solid}`
+};
+
+const colors = {
+  background: palette.white,
+  foreground: palette.grey[800],
+  primaryHue: palette.blue,
+  primaryShade: 600,
+  dangerHue: palette.red,
+  warningHue: palette.yellow,
+  successHue: palette.green,
+  disabledHue: palette.grey
 };
 
 const fonts = {
@@ -76,15 +87,6 @@ const lineHeights = {
   xxxl: `${base * 11}px`
 };
 
-const modes = {
-  default: {
-    backgroundColor: colors.white,
-    foregroundColor: colors.grey[800],
-    primaryHue: 'blue',
-    primaryShade: 600
-  }
-};
-
 const radii = {
   sm: `${base / 2}px`,
   md: `${base}px`
@@ -120,8 +122,7 @@ export default {
   fontSizes,
   fontWeights,
   lineHeights,
-  mode: 'default',
-  modes,
+  palette,
   radii,
   shadowWidths,
   shadows,

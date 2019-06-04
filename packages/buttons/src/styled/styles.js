@@ -11,10 +11,11 @@ import { getColor } from '@zendeskgarden/react-theming';
 
 const color = props => {
   let retVal;
-  const hue = props.danger ? props.theme.colors.red : props.hue;
-  const baseColor = getColor({ hue, shade: props.shade, theme: props.theme });
-  const hoverColor = getColor({ hue, shade: props.shade + 100, theme: props.theme });
-  const activeColor = getColor({ hue, shade: props.shade + 200, theme: props.theme });
+  const hue = props.danger ? props.theme.colors.dangerHue : props.theme.colors.primaryHue;
+  const shade = props.theme.colors.primaryShade;
+  const baseColor = getColor({ hue, shade, theme: props.theme });
+  const hoverColor = getColor({ hue, shade: shade + 100, theme: props.theme });
+  const activeColor = getColor({ hue, shade: shade + 200, theme: props.theme });
   const boxShadow = `
     ${props.focusInset ? 'inset' : ''}
     ${props.theme.shadows.md(rgba(baseColor, 0.35))}`;
@@ -22,7 +23,7 @@ const color = props => {
   if (props.primary) {
     retVal = css`
       background-color: ${baseColor};
-      color: ${props.theme.colors.white};
+      color: ${props.theme.palette.white};
 
       &:hover {
         background-color: ${hoverColor};
