@@ -19,14 +19,14 @@ const SIZE = {
 /**
  * Accepts all `<button>` props
  */
-const Button = React.forwardRef((props, ref) => (
+const Button = React.forwardRef(({ focused, ...other }, ref) => (
   <KeyboardFocusContainer>
     {({ getFocusProps, keyboardFocused }) => (
       <StyledButton
         {...getFocusProps({
           ref,
-          ...props,
-          focused: keyboardFocused
+          ...other,
+          focused: focused || keyboardFocused
         })}
       />
     )}
@@ -51,6 +51,7 @@ Button.propTypes = {
   link: PropTypes.bool,
   /** Applies pill styling */
   pill: PropTypes.bool,
+  focused: PropTypes.bool,
   /** Applies inset `box-shadow` styling on focus */
   focusInset: PropTypes.bool,
   selected: PropTypes.bool

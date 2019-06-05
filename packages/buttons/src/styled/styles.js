@@ -16,9 +16,10 @@ const color = props => {
   const baseColor = getColor({ hue, shade, theme: props.theme });
   const hoverColor = getColor({ hue, shade: shade + 100, theme: props.theme });
   const activeColor = getColor({ hue, shade: shade + 200, theme: props.theme });
+  const boxShadowColor = props.focusInset && props.primary ? props.theme.palette.white : baseColor;
   const boxShadow = `
     ${props.focusInset ? 'inset' : ''}
-    ${props.theme.shadows.md(rgba(baseColor, 0.35))}`;
+    ${props.theme.shadows.md(rgba(boxShadowColor, 0.35))}`;
 
   if (props.primary) {
     retVal = css`
@@ -29,7 +30,7 @@ const color = props => {
         background-color: ${hoverColor};
       }
 
-      &:focus {
+      &.focus-visible {
         box-shadow: ${props.focused && boxShadow};
       }
 
@@ -49,7 +50,7 @@ const color = props => {
         color: ${hoverColor};
       }
 
-      &:focus {
+      &.focus-visible {
         box-shadow: ${props.focused && boxShadow};
       }
 
@@ -65,30 +66,60 @@ const color = props => {
 };
 
 const group = props => {
+  const primary = props.primary;
   const rtl = props.theme.rtl;
+  const lightBorderColor = getColor({ hue: 'grey', shade: 100, theme: props.theme });
+  let lineHeight;
+
+  if (props.size === 'small') {
+    lineHeight = props.theme.base * 8;
+  } else if (props.size === 'large') {
+    lineHeight = props.theme.base * 12;
+  } else {
+    lineHeight = props.theme.base * 10;
+  }
 
   return css`
     position: relative;
+    /* stylelint-disable-next-line property-no-unknown */
     margin-${rtl ? 'right' : 'left'}: ${math(`${props.theme.borderWidths.sm} * -1`)};
+    border-top-width: ${primary && 0};
+    border-bottom-width: ${primary && 0};
+    border-right-color: ${primary && lightBorderColor};
+    border-left-color: ${primary && lightBorderColor};
+    line-height: ${primary && math(`${lineHeight} * 1px`)};
 
-    &:not(:first-of-type):not(:last-of-type) {
-      border-radius: 0;
-    }
-
+    /* stylelint-disable property-no-unknown, property-case */
     &:first-of-type {
-      margin-left: 0;
+      margin-${rtl ? 'right' : 'left'}: 0;
       border-top-${rtl ? 'left' : 'right'}-radius: 0;
       border-bottom-${rtl ? 'left' : 'right'}-radius: 0;
+      border-${rtl ? 'right' : 'left'}-width: ${primary && 0};
     }
 
     &:last-of-type {
       border-top-${rtl ? 'right' : 'left'}-radius: 0;
       border-bottom-${rtl ? 'right' : 'left'}-radius: 0;
+      border-${rtl ? 'left' : 'right'}-width: ${primary && 0};
     }
+    /* stylelint-enable property-no-unknown, property-case */
 
     &:hover,
     &:active {
       z-index: 1;
+    }
+
+    &:disabled {
+      z-index: -1;
+      border-top-width: 0;
+      border-bottom-width: 0;
+      border-right-color: ${lightBorderColor};
+      border-left-color: ${lightBorderColor};
+      line-height: ${math(`${lineHeight} * 1px`)};
+    }
+
+    &:not(:first-of-type):not(:last-of-type) {
+      border-radius: 0;
     }
   `;
 };

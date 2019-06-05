@@ -6,8 +6,13 @@ the `ButtonGroup` or `ButtonGroupContainer` components.
 
 ```jsx
 <ButtonGroupView>
-  <Button>Button 1</Button>
-  <Button>Button 2</Button>
-  <Button>Button 3</Button>
+  <Button focusInset>Button 1</Button>
+  <Button focusInset>Button 2</Button>
+  <Button focusInset>Button 3</Button>
+</ButtonGroupView>
+<ButtonGroupView style={{marginTop: 20}}>
+  <Button focusInset primary pill>Button 1</Button>
+  <Button focusInset primary pill>Button 2</Button>
+  <Button focusInset primary pill>Button 3</Button>
 </ButtonGroupView>
 ```

@@ -15,9 +15,10 @@ const COMPONENT_ID = 'buttons.button';
 /**
  * Accepts all `<button>` props
  */
-const StyledButton = styled.button.attrs(() => ({
+const StyledButton = styled.button.attrs(props => ({
   'data-garden-id': COMPONENT_ID,
   'data-garden-version': PACKAGE_VERSION,
+  className: props.focused && 'focus-visible',
   type: 'button'
 }))`
   display: inline-block;
@@ -67,16 +68,20 @@ const StyledButton = styled.button.attrs(() => ({
   &:disabled {
     border-color: transparent;
     box-shadow: none;
+    /* stylelint-disable-next-line declaration-colon-newline-after */
     background-color: ${props =>
       getColor({ hue: props.theme.colors.disabledHue, shade: 200, theme: props.theme })};
     cursor: default;
+    /* stylelint-disable-next-line declaration-colon-newline-after */
     color: ${props =>
       getColor({ hue: props.theme.colors.disabledHue, shade: 400, theme: props.theme })};
   }
 
+  /* stylelint-disable */
   ${ButtonGroupView} & {
     ${props => styles.group(props)};
   }
+  /* stylelint-enable */
 
   ${props => retrieveTheme(COMPONENT_ID, props)};
 `;

@@ -83,6 +83,7 @@ export default class ButtonGroup extends ControlledComponent {
             key,
             selected: key === selectedKey,
             focused: key === focusedKey,
+            focusInset: true,
             ...child.props
           })
         );

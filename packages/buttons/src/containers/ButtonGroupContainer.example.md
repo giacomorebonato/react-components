@@ -9,7 +9,8 @@ const buttons = ['Button 1', 'Button 2', 'Button 3'];
           {...getButtonProps({
             key: button,
             selected: selectedKey === button,
-            focused: focusedKey === button
+            focused: focusedKey === button,
+            focusInset: true
           })}
         >
           {button}
@@ -44,7 +45,8 @@ const buttons = [
             {...getButtonProps({
               key: button.title,
               selected: selectedKey === button.title,
-              focused: focusedKey === button.title
+              focused: focusedKey === button.title,
+              focusInset: true
             })}
           >
             {button.title}
