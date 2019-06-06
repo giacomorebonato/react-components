@@ -3,7 +3,7 @@ const SettingsIcon = require('@zendeskgarden/svg-icons/src/16/gear-stroke.svg').
 const AttachmentIcon = require('@zendeskgarden/svg-icons/src/16/paperclip.svg').default;
 
 <Grid>
-  <Row>
+  <Row alignItems="center">
     <Col md>
       <IconButton size="small" aria-label="Settings">
         <Icon>

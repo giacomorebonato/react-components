@@ -7,9 +7,10 @@
 
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import classNames from 'classnames';
-import ButtonStyles from '@zendeskgarden/css-buttons';
-import { retrieveTheme } from '@zendeskgarden/react-theming';
+import { math } from 'polished';
+import { defaultTheme, retrieveTheme } from '@zendeskgarden/react-theming';
+import * as styles from '../../styled/styles';
+import Icon from './Icon';
 
 const COMPONENT_ID = 'buttons.icon_button';
 
@@ -17,41 +18,54 @@ import Button from '../Button';
 
 const SIZE = {
   SMALL: 'small',
+  MEDIUM: 'medium',
   LARGE: 'large'
 };
 
-const IconButton = styled(Button).attrs(props => ({
+const IconButton = styled(Button).attrs(() => ({
   'data-garden-id': COMPONENT_ID,
-  'data-garden-version': PACKAGE_VERSION,
-  className: classNames(props.className, ButtonStyles['c-btn--icon'])
+  'data-garden-version': PACKAGE_VERSION
 }))`
+  ${props => styles.icon(props)};
+
+  ${Icon} {
+    transition: transform 0.25s ease-in-out;
+    margin-top: -2px;
+    /* stylelint-disable declaration-colon-newline-after */
+    width: ${props =>
+      props.size === SIZE.LARGE
+        ? math(`${props.theme.base * 6} * 1px`)
+        : math(`${props.theme.base * 4} * 1px`)};
+    height: ${props =>
+      props.size === SIZE.LARGE
+        ? math(`${props.theme.base * 6} * 1px`)
+        : math(`${props.theme.base * 4} * 1px`)};
+    /* stylelint-enable declaration-colon-newline-after */
+    vertical-align: middle;
+  }
+
   ${props => retrieveTheme('buttons.icon_button', props)};
 `;
 
 IconButton.propTypes = {
   /** Apply danger styling */
   danger: PropTypes.bool,
-  size: PropTypes.oneOf([SIZE.SMALL, SIZE.LARGE]),
+  size: PropTypes.oneOf([SIZE.SMALL, SIZE.MEDIUM, SIZE.LARGE]),
   /** Applies primary button styling */
   primary: PropTypes.bool,
   /** Applies basic button styling */
   basic: PropTypes.bool,
-  /** Applies muted button styling */
-  muted: PropTypes.bool,
   /** Applies pill styling */
   pill: PropTypes.bool,
-  disabled: PropTypes.bool,
-  focused: PropTypes.bool,
-  hovered: PropTypes.bool,
-  active: PropTypes.bool,
   /** Callback for reference of the native button element */
   buttonRef: PropTypes.func
 };
 
 IconButton.defaultProps = {
   pill: true,
-  muted: true,
-  basic: true
+  basic: true,
+  size: SIZE.MEDIUM,
+  theme: defaultTheme
 };
 
 /** @component */

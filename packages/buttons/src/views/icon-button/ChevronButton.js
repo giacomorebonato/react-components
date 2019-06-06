@@ -13,6 +13,7 @@ import ChevronDownIcon from '@zendeskgarden/svg-icons/src/16/chevron-down-stroke
 
 const SIZE = {
   SMALL: 'small',
+  MEDIUM: 'medium',
   LARGE: 'large'
 };
 
@@ -30,25 +31,23 @@ const ChevronButton = React.forwardRef(({ rotated, ...buttonProps }, ref) => (
 ChevronButton.propTypes = {
   /** Apply danger styling */
   danger: PropTypes.bool,
-  size: PropTypes.oneOf([SIZE.SMALL, SIZE.LARGE]),
+  size: PropTypes.oneOf([SIZE.SMALL, SIZE.MEDIUM, SIZE.LARGE]),
   /** Applies primary button styling */
   primary: PropTypes.bool,
   /** Applies basic button styling */
   basic: PropTypes.bool,
-  /** Applies muted button styling */
-  muted: PropTypes.bool,
   /** Applies pill styling */
   pill: PropTypes.bool,
-  disabled: PropTypes.bool,
-  focused: PropTypes.bool,
   /** Applies inset `box-shadow` styling on focus */
   focusInset: PropTypes.bool,
-  hovered: PropTypes.bool,
-  active: PropTypes.bool,
   /** Callback for reference of the native button element */
   buttonRef: PropTypes.func,
   /** Rotates icon 180 degrees */
   rotated: PropTypes.bool
+};
+
+ChevronButton.defaultProps = {
+  size: SIZE.MEDIUM
 };
 
 export default ChevronButton;

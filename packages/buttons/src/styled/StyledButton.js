@@ -6,6 +6,7 @@
  */
 
 import styled from 'styled-components';
+import classNames from 'classnames';
 import { defaultTheme, retrieveTheme, getColor } from '@zendeskgarden/react-theming';
 import ButtonGroupView from '../views/button-group/ButtonGroupView';
 import * as styles from './styles';
@@ -18,7 +19,7 @@ const COMPONENT_ID = 'buttons.button';
 const StyledButton = styled.button.attrs(props => ({
   'data-garden-id': COMPONENT_ID,
   'data-garden-version': PACKAGE_VERSION,
-  className: props.focused && 'focus-visible',
+  className: classNames(props.className, { 'focus-visible': props.focused }),
   type: 'button'
 }))`
   display: inline-block;

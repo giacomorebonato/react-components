@@ -20,13 +20,15 @@ const increment = (num = 0) => setState({ count: state.count + num });
   <Row>
     <Col sm={6}>
       <ButtonGroupView>
-        <Button onClick={() => increment(1)}>Add 1</Button>
+        <Button focusInset onClick={() => increment(1)}>
+          Add 1
+        </Button>
         <Dropdown
           onStateChange={({ isOpen }) => setState({ isOpen })}
           onSelect={value => increment(value)}
         >
           <Trigger>
-            <ChevronButton rotated={state.isOpen} aria-label="Other Options" />
+            <ChevronButton focusInset rotated={state.isOpen} aria-label="Other Options" />
           </Trigger>
           <Menu placement="bottom-end">
             <Item value={5}>Add 5</Item>

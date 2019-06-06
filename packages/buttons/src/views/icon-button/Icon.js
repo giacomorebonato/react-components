@@ -5,26 +5,26 @@
  * found at http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+import styled from 'styled-components';
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import ButtonStyles from '@zendeskgarden/css-buttons';
+import { defaultTheme } from '@zendeskgarden/react-theming';
 
 const COMPONENT_ID = 'buttons.icon';
 
-const Icon = ({ children, rotated }) => {
-  return React.cloneElement(Children.only(children), {
-    'data-garden-id': COMPONENT_ID,
-    'data-garden-version': PACKAGE_VERSION,
-    className: classNames(ButtonStyles['c-btn__icon'], {
-      [ButtonStyles['is-rotated']]: rotated
-    })
-  });
-};
+const Icon = styled(({ children, ...props }) =>
+  React.cloneElement(Children.only(children), props)
+).attrs({
+  'data-garden-id': COMPONENT_ID,
+  'data-garden-version': PACKAGE_VERSION
+})`
+  transform: ${props => props.rotated && `rotate(${props.theme.rtl ? '-' : '+'}180deg)`};
+`;
 
 Icon.propTypes = {
   /** Rotates icon 180 degrees */
-  rotated: PropTypes.bool
+  rotated: PropTypes.bool,
+  theme: defaultTheme
 };
 
 /** @component */

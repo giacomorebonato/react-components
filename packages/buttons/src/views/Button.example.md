@@ -93,13 +93,7 @@ be overridden by providing the `focus` prop.
       <Button disabled>Disabled</Button>
     </Col>
     <Col md>
-      <Button hovered>Hovered</Button>
-    </Col>
-    <Col md>
       <Button focused>Focused</Button>
-    </Col>
-    <Col md>
-      <Button active>Active</Button>
     </Col>
   </Row>
 </Grid>

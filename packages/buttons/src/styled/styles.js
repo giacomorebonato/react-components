@@ -9,6 +9,16 @@ import { css } from 'styled-components';
 import { em, math, rgba } from 'polished';
 import { getColor } from '@zendeskgarden/react-theming';
 
+const getLineHeight = props => {
+  if (props.size === 'small') {
+    return props.theme.base * 8;
+  } else if (props.size === 'large') {
+    return props.theme.base * 12;
+  }
+
+  return props.theme.base * 10;
+};
+
 const color = props => {
   let retVal;
   const hue = props.danger ? props.theme.colors.dangerHue : props.theme.colors.primaryHue;
@@ -69,15 +79,7 @@ const group = props => {
   const primary = props.primary;
   const rtl = props.theme.rtl;
   const lightBorderColor = getColor({ hue: 'grey', shade: 100, theme: props.theme });
-  let lineHeight;
-
-  if (props.size === 'small') {
-    lineHeight = props.theme.base * 8;
-  } else if (props.size === 'large') {
-    lineHeight = props.theme.base * 12;
-  } else {
-    lineHeight = props.theme.base * 10;
-  }
+  const lineHeight = getLineHeight(props);
 
   return css`
     position: relative;
@@ -124,23 +126,33 @@ const group = props => {
   `;
 };
 
+const icon = props => {
+  const lineHeight = getLineHeight(props);
+  const size = math(`${lineHeight} * 1px`);
+
+  return css`
+    border: ${props.basic && 'none'};
+    padding: 0;
+    width: ${size};
+    min-width: 0;
+    height: ${size};
+  `;
+};
+
 const size = props => {
   let fontSize;
-  let lineHeight;
   let minWidth;
+  const lineHeight = getLineHeight(props);
   const padding = props.theme.base * 7;
 
   if (props.size === 'small') {
     fontSize = props.theme.fontSizes.sm;
-    lineHeight = props.theme.base * 8;
     minWidth = props.theme.base * 25;
   } else if (props.size === 'large') {
     fontSize = props.theme.fontSizes.md;
-    lineHeight = props.theme.base * 12;
     minWidth = props.theme.base * 35;
   } else {
     fontSize = props.theme.fontSizes.md;
-    lineHeight = props.theme.base * 10;
     minWidth = props.theme.base * 30;
   }
 
@@ -154,4 +166,5 @@ const size = props => {
 
 export { color };
 export { group };
+export { icon };
 export { size };

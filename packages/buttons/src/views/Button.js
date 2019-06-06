@@ -33,10 +33,6 @@ const Button = React.forwardRef(({ focused, ...other }, ref) => (
   </KeyboardFocusContainer>
 ));
 
-Button.defaultProps = {
-  size: SIZE.MEDIUM
-};
-
 Button.propTypes = {
   /** Apply danger styling */
   danger: PropTypes.bool,
@@ -51,10 +47,13 @@ Button.propTypes = {
   link: PropTypes.bool,
   /** Applies pill styling */
   pill: PropTypes.bool,
-  focused: PropTypes.bool,
   /** Applies inset `box-shadow` styling on focus */
   focusInset: PropTypes.bool,
   selected: PropTypes.bool
+};
+
+Button.defaultProps = {
+  size: SIZE.MEDIUM
 };
 
 Button.hasType = () => Button;
