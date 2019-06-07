@@ -29,8 +29,6 @@ const IconButton = styled(Button).attrs(() => ({
   ${props => styles.icon(props)};
 
   ${Icon} {
-    transition: transform 0.25s ease-in-out;
-    margin-top: -2px;
     /* stylelint-disable declaration-colon-newline-after */
     width: ${props =>
       props.size === SIZE.LARGE
@@ -41,7 +39,6 @@ const IconButton = styled(Button).attrs(() => ({
         ? math(`${props.theme.base * 6} * 1px`)
         : math(`${props.theme.base * 4} * 1px`)};
     /* stylelint-enable declaration-colon-newline-after */
-    vertical-align: middle;
   }
 
   ${props => retrieveTheme('buttons.icon_button', props)};

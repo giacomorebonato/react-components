@@ -19,7 +19,7 @@ const ButtonGroupView = styled.div.attrs(() => ({
 }))`
   position: relative;
   z-index: 0;
-  direction: ${props => (props.theme.rtl ? 'rtl' : null)};
+  direction: ${props => props.theme.rtl && 'rtl'};
   white-space: nowrap;
 
   :focus {

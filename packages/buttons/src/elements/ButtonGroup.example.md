@@ -41,14 +41,16 @@ initialState = { selectedKey: 'button-2' };
     setState(newState);
   }}
 >
-  <Button key="button-1" onClick={() => console.log('clicked')}>
+  <Button key="button-1" onClick={() => console.log('clicked')} primary>
     Item 1
   </Button>
-  <Button key="button-2" onClick={() => console.log('clicked')}>
+  <Button key="button-2" onClick={() => console.log('clicked')} primary>
     Item 2
   </Button>
-  <Button disabled>Disabled item</Button>
-  <Button key="button-3" onClick={() => console.log('clicked')}>
+  <Button disabled primary>
+    Disabled item
+  </Button>
+  <Button key="button-3" onClick={() => console.log('clicked')} primary>
     Item 3
   </Button>
 </ButtonGroup>;

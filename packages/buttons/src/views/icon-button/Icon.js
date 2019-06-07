@@ -19,11 +19,17 @@ const Icon = styled(({ children, ...props }) =>
   'data-garden-version': PACKAGE_VERSION
 })`
   transform: ${props => props.rotated && `rotate(${props.theme.rtl ? '-' : '+'}180deg)`};
+  transition: transform 0.25s ease-in-out;
+  margin-top: -2px;
+  vertical-align: middle;
 `;
 
 Icon.propTypes = {
   /** Rotates icon 180 degrees */
-  rotated: PropTypes.bool,
+  rotated: PropTypes.bool
+};
+
+Icon.defaultProps = {
   theme: defaultTheme
 };
 

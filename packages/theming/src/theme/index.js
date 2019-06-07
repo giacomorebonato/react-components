@@ -31,7 +31,7 @@ const colors = {
   dangerHue: palette.red,
   warningHue: palette.yellow,
   successHue: palette.green,
-  disabledHue: palette.grey
+  neutralHue: palette.grey
 };
 
 const fonts = {

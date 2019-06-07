@@ -7,11 +7,21 @@
 
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { defaultTheme, retrieveTheme, getColor } from '@zendeskgarden/react-theming';
+import { defaultTheme, retrieveTheme } from '@zendeskgarden/react-theming';
 import ButtonGroupView from '../views/button-group/ButtonGroupView';
 import * as styles from './styles';
 
 const COMPONENT_ID = 'buttons.button';
+
+const getBorderRadius = props => {
+  if (props.link) {
+    return 0;
+  } else if (props.pill) {
+    return '100px';
+  }
+
+  return props.theme.radii.md;
+};
 
 /**
  * Accepts all `<button>` props
@@ -22,7 +32,7 @@ const StyledButton = styled.button.attrs(props => ({
   className: classNames(props.className, { 'focus-visible': props.focused }),
   type: 'button'
 }))`
-  display: inline-block;
+  display: ${props => (props.link ? 'inline' : 'inline-block')};
   /* prettier-ignore */
   transition:
     border-color 0.25s ease-in-out,
@@ -30,18 +40,18 @@ const StyledButton = styled.button.attrs(props => ({
     background-color 0.25s ease-in-out,
     color 0.25s ease-in-out;
   margin: 0;
-  border: ${props => `${props.theme.borders.sm} transparent`};
-  border-radius: ${props => (props.pill ? '100px' : props.theme.radii.md)};
+  border: ${props => (props.link ? 'none' : `${props.theme.borders.sm} transparent`)};
+  border-radius: ${props => getBorderRadius(props)};
   cursor: pointer;
   width: ${props => (props.stretched ? '100%' : '')};
   overflow: hidden;
-  vertical-align: middle;
+  vertical-align: ${props => !props.link && 'middle'};
   text-align: center;
   text-decoration: none; /* <a> element reset */
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: ${props => !props.link && 'nowrap'};
   font-family: inherit; /* <button> & <input> override */
-  font-weight: ${props => props.theme.fontWeights.regular};
+  font-weight: ${props => (props.link ? 'inherit' : props.theme.fontWeights.regular)};
   -webkit-font-smoothing: subpixel-antialiased;
   box-sizing: border-box;
   user-select: none;
@@ -56,26 +66,32 @@ const StyledButton = styled.button.attrs(props => ({
   }
 
   &:hover {
-    text-decoration: none; /* <a> element reset */
+    text-decoration: ${props => (props.link ? 'underline' : 'none')}; /* <a> element reset */
   }
 
   &:focus {
     outline: none;
   }
 
+  &.focus-visible {
+    text-decoration: ${props => (props.link ? 'underline' : 'none')}; /* <a> element reset */
+  }
+
+  &:active {
+    /* prettier-ignore */
+    transition:
+      border-color 0.1s ease-in-out,
+      background-color 0.1s ease-in-out,
+      color 0.1s ease-in-out;
+    text-decoration: ${props => (props.link ? 'underline' : 'none')}; /* <a> element reset */
+  }
+
   /* Color (default, primary, basic, & danger) styling */
   ${props => styles.color(props)};
 
   &:disabled {
-    border-color: transparent;
-    box-shadow: none;
-    /* stylelint-disable-next-line declaration-colon-newline-after */
-    background-color: ${props =>
-      getColor({ hue: props.theme.colors.disabledHue, shade: 200, theme: props.theme })};
     cursor: default;
-    /* stylelint-disable-next-line declaration-colon-newline-after */
-    color: ${props =>
-      getColor({ hue: props.theme.colors.disabledHue, shade: 400, theme: props.theme })};
+    text-decoration: ${props => props.link && 'none'};
   }
 
   /* stylelint-disable */

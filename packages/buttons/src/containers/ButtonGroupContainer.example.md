@@ -34,7 +34,7 @@ const buttons = [
       {buttons.map(button => {
         if (button.disabled) {
           return (
-            <Button disabled key={button.title}>
+            <Button disabled primary key={button.title}>
               {button.title}
             </Button>
           );
@@ -46,7 +46,8 @@ const buttons = [
               key: button.title,
               selected: selectedKey === button.title,
               focused: focusedKey === button.title,
-              focusInset: true
+              focusInset: true,
+              primary: true
             })}
           >
             {button.title}

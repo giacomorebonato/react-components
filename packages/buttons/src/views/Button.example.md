@@ -31,7 +31,7 @@ be overridden by providing the `focus` prop.
 
 ```jsx
 <Grid>
-  <Row>
+  <Row alignItems="center">
     <Col md>
       <Button>Default</Button>
     </Col>
@@ -43,9 +43,6 @@ be overridden by providing the `focus` prop.
     </Col>
     <Col md>
       <Button basic>Basic</Button>
-    </Col>
-    <Col md>
-      <Button muted>Muted</Button>
     </Col>
     <Col md>
       <Button link>Link</Button>
@@ -87,13 +84,105 @@ be overridden by providing the `focus` prop.
 <Grid>
   <Row>
     <Col md>
-      <Button>Default</Button>
+      <Button focused>Focused Default</Button>
     </Col>
     <Col md>
-      <Button disabled>Disabled</Button>
+      <Button focused focusInset>
+        Inset Focused Default
+      </Button>
     </Col>
     <Col md>
-      <Button focused>Focused</Button>
+      <Button disabled>Disabled Default</Button>
+    </Col>
+  </Row>
+  <br />
+  <Row>
+    <Col md>
+      <Button focused basic>
+        Focused Basic
+      </Button>
+    </Col>
+    <Col md>
+      <Button focused focusInset basic>
+        Inset Focused Basic
+      </Button>
+    </Col>
+    <Col md>
+      <Button disabled basic>
+        Disabled Basic
+      </Button>
+    </Col>
+  </Row>
+  <br />
+  <Row>
+    <Col md>
+      <Button focused danger>
+        Focused Danger Default
+      </Button>
+    </Col>
+    <Col md>
+      <Button focused focusInset danger>
+        Inset Focused Default Danger
+      </Button>
+    </Col>
+    <Col md>
+      <Button disabled danger>
+        Disabled Danger Default
+      </Button>
+    </Col>
+  </Row>
+  <br />
+  <Row>
+    <Col md>
+      <Button focused primary>
+        Focused Primary
+      </Button>
+    </Col>
+    <Col md>
+      <Button focused focusInset primary>
+        Focused Inset Primary
+      </Button>
+    </Col>
+    <Col md>
+      <Button disabled primary>
+        Disabled Primary
+      </Button>
+    </Col>
+  </Row>
+  <br />
+  <Row>
+    <Col md>
+      <Button focused primary danger>
+        Focused Primary Danger
+      </Button>
+    </Col>
+    <Col md>
+      <Button focused focusInset primary danger>
+        Inset Focused Primary Danger
+      </Button>
+    </Col>
+    <Col md>
+      <Button disabled primary danger>
+        Disabled Primary Danger
+      </Button>
+    </Col>
+  </Row>
+  <br />
+  <Row>
+    <Col md>
+      <Button focused link>
+        Focused Link
+      </Button>
+    </Col>
+    <Col md>
+      <Button focused danger link>
+        Focused Danger Link
+      </Button>
+    </Col>
+    <Col md>
+      <Button disabled link>
+        Disabled Link
+      </Button>
     </Col>
   </Row>
 </Grid>
