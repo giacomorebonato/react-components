@@ -5,6 +5,9 @@
  * found at http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+/* temporary import to retain `dist/styles.css` */
+import ButtonStyles from '@zendeskgarden/css-buttons'; // eslint-disable-line
+
 export { default as ButtonGroupContainer } from './containers/ButtonGroupContainer';
 export { default as ButtonGroup } from './elements/ButtonGroup';
 export { default as Anchor } from './views/Anchor';
