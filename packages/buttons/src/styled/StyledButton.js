@@ -8,7 +8,7 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { defaultTheme, retrieveTheme } from '@zendeskgarden/react-theming';
-import ButtonGroupView from '../views/button-group/ButtonGroupView';
+import StyledButtonGroup from './StyledButtonGroup';
 import * as styles from './styles';
 
 const COMPONENT_ID = 'buttons.button';
@@ -95,7 +95,7 @@ const StyledButton = styled.button.attrs(props => ({
   }
 
   /* stylelint-disable */
-  ${ButtonGroupView} & {
+  ${StyledButtonGroup} & {
     ${props => styles.group(props)};
   }
   /* stylelint-enable */
