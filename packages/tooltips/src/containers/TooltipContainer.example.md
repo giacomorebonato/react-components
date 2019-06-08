@@ -102,7 +102,7 @@ const CustomTooltip = styled.div`
 This example uses a native input, which doesn't open it's tooltip `onMouseEnter`.
 
 ```jsx
-const { Input } = require('@zendeskgarden/react-textfields/src');
+const { Field, Input } = require('@zendeskgarden/react-forms/src');
 
 <TooltipContainer
   placement="end"
@@ -136,7 +136,7 @@ const { Input } = require('@zendeskgarden/react-textfields/src');
 
 ```jsx
 const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
-const { Toggle, Label } = require('@zendeskgarden/react-toggles/src');
+const { Field, Toggle, Label } = require('@zendeskgarden/react-forms/src');
 
 const MarginGrid = styled(Grid)`
   margin: 20px;
@@ -155,9 +155,11 @@ initialState = {
 };
 
 <div>
-  <Toggle checked={state.isRtl} onChange={event => setState({ isRtl: event.target.checked })}>
-    <Label style={{ marginBottom: 16 }}>RTL Locale Placement</Label>
-  </Toggle>
+  <Field>
+    <Toggle checked={state.isRtl} onChange={event => setState({ isRtl: event.target.checked })}>
+      <Label style={{ marginBottom: 16 }}>RTL Locale Placement</Label>
+    </Toggle>
+  </Field>
   <ThemeProvider rtl={state.isRtl}>
     <MarginGrid>
       <Row>
