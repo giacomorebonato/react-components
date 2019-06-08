@@ -8,11 +8,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import deepmerge from 'deepmerge';
+import merge from 'merge-anything';
 import { default as defaultTheme } from '../theme';
 
 const ThemeProvider = props => {
-  const theme = deepmerge(defaultTheme, props.theme);
+  const theme = merge(defaultTheme, props.theme);
 
   theme.rtl = props.rtl;
   theme.document = props.document;

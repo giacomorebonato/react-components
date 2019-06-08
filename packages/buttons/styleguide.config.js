@@ -37,11 +37,11 @@ module.exports = {
           components: '../../packages/buttons/src/views/[A-Z]*.js'
         },
         {
-          name: 'IconButton',
+          name: 'Icons',
           components: '../../packages/buttons/src/views/icon-button/[A-Z]*.js'
         },
         {
-          name: 'ButtonGroup',
+          name: 'Groups',
           components: '../../packages/buttons/src/views/button-group/[A-Z]*.js'
         }
       ]

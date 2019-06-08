@@ -40,8 +40,6 @@ ChevronButton.propTypes = {
   pill: PropTypes.bool,
   /** Applies inset `box-shadow` styling on focus */
   focusInset: PropTypes.bool,
-  /** Callback for reference of the native button element */
-  buttonRef: PropTypes.func,
   /** Rotates icon 180 degrees */
   rotated: PropTypes.bool
 };

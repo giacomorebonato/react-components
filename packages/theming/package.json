@@ -19,7 +19,7 @@
     "start": "../../utils/scripts/start.sh"
   },
   "dependencies": {
-    "deepmerge": "3.2.0"
+    "merge-anything": "2.2.5"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",

@@ -7,8 +7,8 @@
 
 import { css } from 'styled-components';
 import { em, math, rgba } from 'polished';
-import { getColor } from '@zendeskgarden/react-theming';
-import Icon from '../views/icon-button/Icon';
+import { getColor, isRtl } from '@zendeskgarden/react-theming';
+import StyledIcon from './StyledIcon';
 
 const getLineHeight = props => {
   if (props.size === 'small') {
@@ -118,7 +118,7 @@ const color = props => {
 
 const group = props => {
   const primary = props.primary;
-  const rtl = props.theme.rtl;
+  const rtl = isRtl(props);
   const lightBorderColor = getColor({
     hue: props.theme.colors.neutralHue,
     shade: 100,
@@ -170,11 +170,11 @@ const group = props => {
     }
 
     /* stylelint-disable property-no-unknown, selector-max-specificity */
-    &:first-of-type:not(:last-of-type) ${Icon} {
+    &:first-of-type:not(:last-of-type) ${StyledIcon} {
       margin-${rtl ? 'left' : 'right'}: ${props.pill && '-2px'};
     }
 
-    &:last-of-type:not(:first-of-type) ${Icon} {
+    &:last-of-type:not(:first-of-type) ${StyledIcon} {
       margin-${rtl ? 'right' : 'left'}: ${props.pill && '-2px'};
     }
     /* stylelint-enable property-no-unknown, selector-max-specificity */
@@ -199,6 +199,7 @@ const size = props => {
 
   if (props.link) {
     retVal = css`
+      padding: 0;
       font-size: inherit;
     `;
   } else {
