@@ -107,16 +107,18 @@ const { Field, Input } = require('@zendeskgarden/react-forms/src');
 <TooltipContainer
   placement="end"
   trigger={({ getTriggerProps, ref }) => (
-    <Input
-      {...getTriggerProps({
-        onMouseEnter: event => event.preventDefault(), // stop our default logic
-        onMouseLeave: event => event.preventDefault(), // stop our default logic
-        'aria-label': 'Example hover only input',
-        placeholder: 'Hover does not trigger me, but focus does',
-        ref,
-        style: { width: 500 }
-      })}
-    />
+    <Field>
+      <Input
+        {...getTriggerProps({
+          onMouseEnter: event => event.preventDefault(), // stop our default logic
+          onMouseLeave: event => event.preventDefault(), // stop our default logic
+          'aria-label': 'Example hover only input',
+          placeholder: 'Hover does not trigger me, but focus does',
+          ref,
+          style: { width: 500 }
+        })}
+      />
+    </Field>
   )}
 >
   {({ getTooltipProps, placement }) => (
