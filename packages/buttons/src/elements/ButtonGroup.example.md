@@ -7,10 +7,12 @@ If this abstraction is not able to handle your use-case use the
 [ButtonGroupContainer](#buttongroupcontainer) component with our presentation components.
 
 ```jsx static
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+
 <ButtonGroup>
   <Button key="button-1">Item 1</Button>
   ...
-</ButtonGroup>
+</ButtonGroup>;
 ```
 
 ### Uncontrolled Usage

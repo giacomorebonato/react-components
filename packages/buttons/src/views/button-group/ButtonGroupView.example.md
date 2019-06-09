@@ -5,6 +5,8 @@ the `ButtonGroup` or `ButtonGroupContainer` components.
 ### Standard Button Group (no logic)
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+
 <ButtonGroupView>
   <Button focusInset>Button 1</Button>
   <Button focusInset>Button 2</Button>

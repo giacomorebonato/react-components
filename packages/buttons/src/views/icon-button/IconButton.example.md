@@ -1,4 +1,5 @@
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
 const SettingsIcon = require('@zendeskgarden/svg-icons/src/16/gear-stroke.svg').default;
 const AttachmentIcon = require('@zendeskgarden/svg-icons/src/16/paperclip.svg').default;
 

@@ -7,6 +7,8 @@ If you need a `<button>` that has anchor styling, use the
 <!-- markdownlint-disable -->
 <!-- prettier-ignore -->
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+
 <div>
   Apparently we had reached a great height in the
   <Anchor href="#button">
@@ -31,6 +33,7 @@ If you need a `<button>` that has anchor styling, use the
 ### External Anchor Sizing
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
 const { SM, MD, LG, XL, XXL } = require('@zendeskgarden/react-typography');
 
 const AnchorExample = () => (

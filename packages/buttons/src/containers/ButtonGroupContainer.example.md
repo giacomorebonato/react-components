@@ -1,4 +1,5 @@
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
 const buttons = ['Button 1', 'Button 2', 'Button 3'];
 
 <ButtonGroupContainer>
@@ -22,6 +23,7 @@ const buttons = ['Button 1', 'Button 2', 'Button 3'];
 ```
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
 const buttons = [
   { title: 'Button 1' },
   { title: 'Disabled', disabled: true },

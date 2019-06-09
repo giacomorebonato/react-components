@@ -7,6 +7,7 @@ The `SplitButton` pattern is accomplished with:
   package for the secondary actions menu
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
 const { Dropdown, Trigger, Menu, Item } = require('@zendeskgarden/react-dropdowns/src');
 
 initialState = {

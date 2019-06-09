@@ -3,6 +3,8 @@ wrapper that applies focused styling _ONLY_ on keyboard focus. This can always
 be overridden by providing the `focus` prop.
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+
 <Grid>
   <Row>
     <Col md>
@@ -24,12 +26,14 @@ be overridden by providing the `focus` prop.
       </Button>
     </Col>
   </Row>
-</Grid>
+</Grid>;
 ```
 
 ### Types
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+
 <Grid>
   <Row alignItems="center">
     <Col md>
@@ -48,12 +52,14 @@ be overridden by providing the `focus` prop.
       <Button link>Link</Button>
     </Col>
   </Row>
-</Grid>
+</Grid>;
 ```
 
 ### Sizes
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+
 <Grid>
   <Row>
     <Col md>
@@ -75,12 +81,14 @@ be overridden by providing the `focus` prop.
       <Button stretched>Stretched</Button>
     </Col>
   </Row>
-</Grid>
+</Grid>;
 ```
 
 ### States
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+
 <Grid>
   <Row>
     <Col md>
@@ -185,5 +193,5 @@ be overridden by providing the `focus` prop.
       </Button>
     </Col>
   </Row>
-</Grid>
+</Grid>;
 ```
