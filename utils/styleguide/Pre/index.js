@@ -9,11 +9,12 @@ import React from 'react';
 import styled from 'styled-components';
 import PreRenderer from 'react-styleguidist/lib/rsg-components/Markdown/Pre/PreRenderer';
 
-const { zdColorGrey100, zdColorKale200 } = require('@zendeskgarden/css-variables');
+const { zdColorGrey100, zdColorGrey800, zdColorKale200 } = require('@zendeskgarden/css-variables');
 
 const PreWrapper = styled.div`
   border-radius: 3px;
   background-color: ${props => (props.dark ? zdColorKale200 : zdColorGrey100)};
+  color: ${zdColorGrey800};
 `;
 
 const Pre = props => {
