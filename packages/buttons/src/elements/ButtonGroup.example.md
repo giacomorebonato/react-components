@@ -18,11 +18,13 @@ const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
 ### Uncontrolled Usage
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+
 <ButtonGroup>
   <Button key="button-1">Item 1</Button>
   <Button key="button-2">Item 2</Button>
   <Button key="button-3">Item 3</Button>
-</ButtonGroup>
+</ButtonGroup>;
 ```
 
 ### Controlled Usage
@@ -31,6 +33,8 @@ All elements proxy their events and attributes. This example uses controlled
 state as well as custom `onClick` events for each button.
 
 ```jsx
+const { ThemeProvider } = require('@zendeskgarden/react-theming/src');
+
 initialState = { selectedKey: 'button-2' };
 
 <ButtonGroup
