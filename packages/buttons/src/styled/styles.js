@@ -119,11 +119,7 @@ const color = props => {
 const group = props => {
   const primary = props.primary;
   const rtl = isRtl(props);
-  const lightBorderColor = getColor({
-    hue: props.theme.colors.neutralHue,
-    shade: 100,
-    theme: props.theme
-  });
+  const lightBorderColor = props.theme.colors.background;
   const lineHeight = getLineHeight(props);
 
   return css`

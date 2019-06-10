@@ -9,10 +9,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Anchor } from '../../../packages/buttons/src';
 
-const LinkRenderer = ({ children }) => <Anchor>{children}</Anchor>;
+const LinkRenderer = ({ children, href }) => <Anchor href={href}>{children}</Anchor>;
 
 LinkRenderer.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  href: PropTypes.string
 };
 
 export default LinkRenderer;
