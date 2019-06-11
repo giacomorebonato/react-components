@@ -17,8 +17,8 @@ const COMPONENT_ID = 'buttons.icon_button';
 const iconStyles = props => {
   const size =
     props.size === 'large'
-      ? math(`${props.theme.base * 6} * 1px`)
-      : math(`${props.theme.base * 4} * 1px`);
+      ? math(`${props.theme.space.base * 6} * 1px`)
+      : math(`${props.theme.space.base * 4} * 1px`);
 
   return css`
     width: ${size};

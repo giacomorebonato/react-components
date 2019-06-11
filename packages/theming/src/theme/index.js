@@ -24,6 +24,7 @@ const borders = {
 };
 
 const colors = {
+  base: 'light',
   background: palette.white,
   foreground: palette.grey[800],
   primaryHue: palette.blue,
@@ -103,6 +104,7 @@ const shadows = {
 };
 
 const space = {
+  base,
   xxs: `${base}px`,
   xs: `${base * 2}px`,
   sm: `${base * 3}px`,
@@ -113,7 +115,6 @@ const space = {
 };
 
 export default {
-  base,
   borders,
   borderStyles,
   borderWidths,

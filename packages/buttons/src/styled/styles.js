@@ -12,12 +12,12 @@ import StyledIcon from './StyledIcon';
 
 const getLineHeight = props => {
   if (props.size === 'small') {
-    return props.theme.base * 8;
+    return props.theme.space.base * 8;
   } else if (props.size === 'large') {
-    return props.theme.base * 12;
+    return props.theme.space.base * 12;
   }
 
-  return props.theme.base * 10;
+  return props.theme.space.base * 10;
 };
 
 const color = props => {
@@ -202,17 +202,17 @@ const size = props => {
     let fontSize;
     let minWidth;
     const lineHeight = getLineHeight(props);
-    const padding = props.theme.base * 7;
+    const padding = props.theme.space.base * 7;
 
     if (props.size === 'small') {
       fontSize = props.theme.fontSizes.sm;
-      minWidth = props.theme.base * 25;
+      minWidth = props.theme.space.base * 25;
     } else if (props.size === 'large') {
       fontSize = props.theme.fontSizes.md;
-      minWidth = props.theme.base * 35;
+      minWidth = props.theme.space.base * 35;
     } else {
       fontSize = props.theme.fontSizes.md;
-      minWidth = props.theme.base * 30;
+      minWidth = props.theme.space.base * 30;
     }
 
     retVal = css`
