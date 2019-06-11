@@ -6,6 +6,7 @@
  */
 
 import { default as defaultTheme } from '../theme';
+import { darken, lighten } from 'polished';
 
 /** @component */
 export default function getColor({ hue, shade, theme } = {}) {
@@ -24,10 +25,19 @@ export default function getColor({ hue, shade, theme } = {}) {
 
     _shade = Object.keys(_hue).reduce((previous, current) => {
       // Find the closest available shade within the given hue.
-      return Math.abs(current - _shade) < Math.abs(previous - _shade) ? current : previous;
+      return Math.abs(current - _shade) < Math.abs(previous - _shade)
+        ? parseInt(current, 10)
+        : parseInt(previous, 10);
     });
 
     retVal = _hue[_shade];
+
+    if (shade !== _shade) {
+      // Adjust darkness/lightness if shade doesn't exist within the given hue.
+      const amount = (Math.abs(shade - _shade) / 100) * 0.05;
+
+      retVal = shade > _shade ? darken(amount, retVal) : lighten(amount, retVal);
+    }
   } else {
     retVal = _hue;
   }
